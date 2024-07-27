@@ -1,7 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegistrarUsuarioContoller;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
 Route::get('/', function () {
-    return view('registrarUsuarios');
+    return view('RegistroUsuario');
 });
+
+
+Route::post('validarUsuarioExiste',[RegistrarUsuarioContoller::class,'validarUsuario_Existe']);
+Route::post('GuardarContacto',[RegistrarUsuarioContoller::class,'GuardarContacto']);
